@@ -188,5 +188,6 @@ int main(){
     */
     //preorder(root);
     postorder(root);
+    delete root;
 
 }
