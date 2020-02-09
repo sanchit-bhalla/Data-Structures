@@ -89,8 +89,22 @@ public:
     bool search(string word){
         return search(root,word);
     }
-
+    void insert_in_suffix_Trie(string word){
+        // This fun. insert word as well as its all suffixes in trie also
+        for(int i=0;i<word.size();i++){
+            insertWord(word.substr(i));
+        }
+    }
     void removeWord(string word){
         removeWord(root, word);
     }
+    bool patternMatching(vector<string> vect, string pattern) {
+        // Insert all words with their suffixes in trie
+        for(int i=0;i<vect.size();i++){
+            insert_in_suffix_Trie(vect[i]);
+        }
+
+        // Search pattern
+        return search(root,pattern);
+	}
 };

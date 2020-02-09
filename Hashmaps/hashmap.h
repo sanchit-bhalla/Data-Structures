@@ -133,6 +133,7 @@ public:
                 count--;
                 return value;
             }
+            prev = head;
             head = head->next;
         }
         // means key not present
